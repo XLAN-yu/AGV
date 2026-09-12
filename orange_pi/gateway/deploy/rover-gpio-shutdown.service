@@ -1,0 +1,21 @@
+[Unit]
+Description=ROVER-ONE PC11 shutdown button helper
+Documentation=file:/opt/rover-one/current/orange_pi/gateway/README.md
+After=rover-gateway.service
+Wants=rover-gateway.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+EnvironmentFile=-/etc/rover-one/gpio-shutdown.env
+ExecStart=/usr/local/lib/rover-one/pc11-shutdown-helper.sh
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

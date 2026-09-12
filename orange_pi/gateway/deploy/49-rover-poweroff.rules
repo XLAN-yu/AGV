@@ -1,0 +1,8 @@
+/* Permit only the dedicated rover gateway account to request system poweroff. */
+polkit.addRule(function(action, subject) {
+    if (subject.user == "rover" &&
+        (action.id == "org.freedesktop.login1.power-off" ||
+         action.id == "org.freedesktop.login1.power-off-multiple-sessions")) {
+        return polkit.Result.YES;
+    }
+});

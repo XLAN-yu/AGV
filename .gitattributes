@@ -1,0 +1,7 @@
+*.sh text eol=lf
+*.py text eol=lf
+*.service text eol=lf
+*.rules text eol=lf
+gradlew text eol=lf
+*.jar binary
+

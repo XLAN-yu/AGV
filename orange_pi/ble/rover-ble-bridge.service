@@ -1,0 +1,24 @@
+[Unit]
+Description=ROVER ONE BLE to existing safety gateway bridge
+After=bluetooth.service rover-gateway.service
+Requires=bluetooth.service rover-gateway.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/rover-one-ble
+Environment=ROVER_BLE_GATEWAY_URI=ws://127.0.0.1:8000/ws
+Environment=ROVER_BLE_ORIGIN=http://10.42.0.1
+Environment=ROVER_BLE_PAIR_EVENT_PORT=45991
+EnvironmentFile=-/etc/rover-one/ble.env
+ExecStart=/opt/rover-one-ble/.venv/bin/python /opt/rover-one-ble/bridge.py
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/bluetooth
+
+[Install]
+WantedBy=multi-user.target

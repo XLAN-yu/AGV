@@ -1,0 +1,48 @@
+# Local Android/Gradle state and build products
+**/.gradle/
+**/.kotlin/
+**/build/
+**/local.properties
+**/.idea/
+*.apk
+*.aab
+
+# Python environments and caches
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+*.py[cod]
+
+# Keil, STM32CubeIDE and generated firmware artifacts
+**/*.uvoptx
+**/*.uvguix.*
+**/*.uvgui.*
+**/*.uvmpw
+**/Listings/
+**/Objects/
+*.axf
+*.elf
+*.hex
+*.bin
+*.o
+*.d
+*.dep
+*.map
+*.build_log.htm
+
+# Machine-specific settings, secrets and archived releases
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.zip
+*.tar.gz
+*.log
+*.bak
+*backup*
+
